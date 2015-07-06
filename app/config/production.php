@@ -26,8 +26,8 @@ return [
       'smtp_auth' => true,
       'smtp_secure' => 'tls',
       'host' => 'smtp.gmail.com',
-      'username' => 'thesamchris@gmail.com',
-      'password' => 'Paradoxian',
+      'username' => 'thegoodworkteam@gmail.com',
+      'password' => 'thegoodworkteam1234',
       'port' => 587,
       'html' => true
   ],
