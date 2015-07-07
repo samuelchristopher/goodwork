@@ -1,10 +1,10 @@
 <?php
 
-$app->get('/register', function() use ($app) {
+$app->get('/register', $guest(), function() use ($app) {
   $app->render('auth/register.php');
 })->name('register');
 
-$app->post('/register', function() use ($app) {
+$app->post('/register', $guest(), function() use ($app) {
   $request = $app->request;
 
   // Getting information
@@ -33,7 +33,7 @@ $app->post('/register', function() use ($app) {
         'active' => false,
         'active_hash' => $app->hash->hash($identifier)
     ]);
-    
+
     // Sending Email for authentication
     $app->mail->send('email/auth/registered.php', [ 'user' => $user, 'identifier' => $identifier], function($message) use ($user){
       $message->to($user->email);
