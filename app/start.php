@@ -5,6 +5,7 @@ use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 
 use Noodlehaus\Config;
+use RandomLib\Factory as RandomLib;
 
 use GoodWork\User\User;
 use GoodWork\Mail\Mailer;
@@ -67,6 +68,11 @@ $app->container->singleton('mail', function() use ($app) {
 
   // Return mailer object
   return new Mailer($app->view, $mailer);
+});
+
+$app->container->singleton('randomlib', function() {
+  $factory = new RandomLib;
+  return $factory->getMediumStrengthGenerator();
 });
 
 $view = $app->view();
