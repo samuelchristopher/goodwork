@@ -1,9 +1,10 @@
 {% extends 'email/templates/default.php' %}
 
 {% block lead %}
-  Welcome to the Family!
+  Almost there!
 {% endblock %}
 
 {% block content %}
-  You have registered!
+  <p>You have registered!</p>
+  <p>Please do activate your account using this link: {{ baseUrl }}{{ urlFor('activate') }}?email={{ user.email }}&identifier={{ identifier|url_encode }}</p>
 {% endblock %}
