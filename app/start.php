@@ -14,6 +14,7 @@ use GoodWork\Validation\Validator;
 
 
 use GoodWork\Middleware\BeforeMiddleware;
+use GoodWork\Middleware\CsrfMiddleware;
 
 session_cache_limiter(false);
 session_start();
@@ -31,6 +32,7 @@ $app = new Slim([
 ]);
 
 $app->add(new BeforeMiddleware);
+$app->add(new CsrfMiddleware);
 
 $app->configureMode($app->config('mode'), function() use ($app) {
   $mode = preg_replace('/\s+/', '', $app->mode);

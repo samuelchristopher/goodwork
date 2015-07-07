@@ -136,6 +136,7 @@
         </select> -->
 
         <button type="submit" class="btn btn-default">Submit</button>
+                <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
       </form>
     </div>
   </div>

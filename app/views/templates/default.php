@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- GOODWORK IS A PATENTED ENTITY OWNED BY SAMUEL PAUL CHRISTOPHER -->
+    <!-- This is the sole work of Samuel Paul Christopher. All rights reserved. NOTE: PLAGARISM OF THIS PROJECT IS PUNISHABLE BY LAW. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodWork | {% block title %}{% endblock %}</title>

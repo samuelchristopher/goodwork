@@ -17,6 +17,7 @@
           {% if errors.first('Password') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Password') }}</div> {% endif %}
         </div>
         <button type="submit" class="btn btn-default">Login</button>
+        <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
       </form>
     </div>
   </div>
