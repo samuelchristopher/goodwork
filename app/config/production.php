@@ -10,10 +10,10 @@ return [
   ],
   'db' => [
       'driver' => 'mysql',
-      'host' => '127.0.0.1',
-      'name' => 'site',
-      'username' => 'root',
-      'password' => '',
+      'host' => 'mysql.hostinger.my',
+      'name' => 'u544037136_site',
+      'username' => 'u544037136_root',
+      'password' => 'password1234',
       'charset' => 'utf8',
       'collation' => 'utf8_unicode_ci',
       'prefix' => ''
