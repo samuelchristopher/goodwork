@@ -16,6 +16,9 @@
           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
           {% if errors.first('Password') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Password') }}</div> {% endif %}
         </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember" id="remember"> Remember me</label>
+        </div>
         <button type="submit" class="btn btn-default">Login</button>
         <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
       </form>
