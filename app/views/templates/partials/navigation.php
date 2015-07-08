@@ -39,6 +39,7 @@
         {% if auth %}
           <ul class="nav navbar-nav navbar-right">
           <li><a href="#">Welcome {{auth.getFullNameOrUsername }}!</a></li>
+          <li><a href="{{ urlFor('logout') }}">Log out</a></li>
           </ul>
         {% else %}
           <ul class="nav navbar-nav navbar-right">
