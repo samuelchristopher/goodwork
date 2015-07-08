@@ -2,7 +2,7 @@
 
 return [
   'app'=> [
-      'url' => 'http://localhost',
+      'url' => 'http://dev-goodwork.hol.es',
       'hash' => [
           'algo' => PASSWORD_BCRYPT,
           'cost' => 10
