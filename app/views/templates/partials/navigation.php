@@ -38,6 +38,7 @@
         </ul>
         {% if auth %}
           <ul class="nav navbar-nav navbar-right">
+          <li><img src="{{ auth.getAvatarUrl({size: 30}) }}" alt="Your avatar" style="padding: 10px; border-radius: 60%;"/></li>
           <li><a href="#">Welcome {{auth.getFullNameOrUsername }}!</a></li>
           <li><a href="{{ urlFor('logout') }}">Log out</a></li>
           </ul>
