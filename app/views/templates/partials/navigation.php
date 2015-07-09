@@ -27,7 +27,19 @@
             <ul class="dropdown-menu">
               <!-- <li><a href="{{ urlFor('login') }}">Login</a></li>
               <li><a href="{{ urlFor('register') }}">Register</a></li> -->
-              <li><a href="#">Something else here</a></li>
+
+              <li>
+                {% if auth %}
+                  {% if auth.isAdmin %}
+                    <a href="{{ urlFor('admin') }}">Admin</a>
+                  {% else %}
+                    <a href="#">Something else here</a>
+                  {% endif %}
+                {% else %}
+                  <a href="#">Something else here</a>
+                {% endif %}
+
+              </li>
               <li role="separator" class="divider"></li>
               <li><a href="{{ urlFor('user.all') }}">All users</a></li>
             </ul>

@@ -60,4 +60,19 @@ class User  extends Eloquent
   {
     $this->updateRememberCredentials(null, null);
   }
+
+  public function hasPermission($permission)
+  {
+    return (bool) $this->permissions->{$permission};
+  }
+
+  public function isAdmin()
+  {
+    return $this->hasPermission('is_admin');
+  }
+
+  public function permissions()
+  {
+    return $this->hasOne('GoodWork\User\UserPermission', 'user_id');
+  }
 }
