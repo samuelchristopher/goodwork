@@ -19,33 +19,32 @@
       <h1>{{ user.getFullNameOrUsername }}'s details</h1>
     </div>
 
-    <div class="container">
-      <div class="row">
-        {% if user.getFullName %}
-          <div class="col-md-4">
-            <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Full Name</h3>
-              </div>
-              <div class="panel-body">
-                {{ user.getFullName }}
-              </div>
-            </div>
-          </div>
-        {% endif %}
+
+    <div class="row">
+      {% if user.getFullName %}
         <div class="col-md-4">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Contact</h3>
+              <h3 class="panel-title">Full Name</h3>
             </div>
             <div class="panel-body">
-              {{ user.email }}
+              {{ user.getFullName }}
             </div>
           </div>
         </div>
+      {% endif %}
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Contact</h3>
+          </div>
+          <div class="panel-body">
+            {{ user.email }}
+          </div>
+        </div>
       </div>
-
     </div>
+
 
 
   </div>

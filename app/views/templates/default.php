@@ -43,7 +43,7 @@
       background-color: rgba(135, 216, 205, 0.82);
     }
     .notice {
-      padding: 2.75rem 0;
+      padding: 1.75rem 0;
       text-align: center;
       margin: 0;
       color: white;
