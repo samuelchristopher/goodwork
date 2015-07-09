@@ -19,7 +19,7 @@
               {{ user.username }}{% if user.getFullName %} (<em>{{user.getFullName}}</em>){% endif %}
             </div>
             <div class="panel-footer">
-              <button type="button" class="btn btn-primary"><a style="color: white;" href="{{ urlFor('user.profile', {username: user.username})}}">Profile >></a></button>
+              <button type="button" class="btn btn-primary"><a style="color: white;" href="{{ urlFor('user.profile', {username: user.username})}}">Profile</a></button>
             </div>
           </div>
         </div>
