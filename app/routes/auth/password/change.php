@@ -20,7 +20,7 @@ $app->post('/change-password', $authenticated(), function() use ($app) {
   ]);
 
   if ($v->passes()) {
-    $user = $app->auth
+    $user = $app->auth;
 
     $user->update([
       'password' => $app->hash->password($password)
