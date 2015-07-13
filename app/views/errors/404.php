@@ -1,6 +1,6 @@
 {% extends 'templates/default.php' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}404{% endblock %}
 
 {% block content %}
   <div class="container">
