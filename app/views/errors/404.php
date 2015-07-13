@@ -8,7 +8,6 @@
       <div style="padding-left: 20px;">
         <h1>404</h1>
         <p>That page can't be found</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
       </div>
     </div>
   </div>
