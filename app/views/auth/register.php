@@ -11,22 +11,22 @@
         <div class="form-group">
           <label for="email">Email address</label>
           <input type="text" class="form-control" id="email" name="email" placeholder="Email" {% if request.post('email') %} value="{{ request.post('email') }}" {% endif %}>
-          {% if errors.first('Email') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Email') }}</div> {% endif %}
+          {% if errors.has('Email') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Email') }}</div> {% endif %}
         </div>
         <div class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control" id="username" name="username" placeholder="Username" {% if request.post('username') %} value="{{ request.post('username') }}" {% endif %}>
-          {% if errors.first('Username') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Username') }}</div> {% endif %}
+          {% if errors.has('Username') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Username') }}</div> {% endif %}
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-          {% if errors.first('Password') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Password') }}</div> {% endif %}
+          {% if errors.has('Password') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Password') }}</div> {% endif %}
         </div>
         <div class="form-group">
           <label for="password_confirm">Confirm password</label>
           <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm password">
-          {% if errors.first('Confirm password') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Confirm password') }}</div> {% endif %}
+          {% if errors.has('Confirm password') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Confirm password') }}</div> {% endif %}
         </div>
         <!-- <hr> -->
         <!-- <h1>GoodWork details</h1>

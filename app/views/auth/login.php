@@ -9,12 +9,12 @@
         <div class="form-group">
           <label for="identifier">Username/email</label>
           <input type="text" class="form-control" id="identifier" name="identifier" placeholder="Username/email">
-          {% if errors.first('Identifier') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Identifier') }}</div> {% endif %}
+          {% if errors.has('Identifier') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Identifier') }}</div> {% endif %}
         </div>
         <div class="form-group">
           <label for="password">Password</label>
           <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-          {% if errors.first('Password') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Password') }}</div> {% endif %}
+          {% if errors.has('Password') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Password') }}</div> {% endif %}
         </div>
         <div class="checkbox">
           <label><input type="checkbox" name="remember" id="remember"> Remember me</label>

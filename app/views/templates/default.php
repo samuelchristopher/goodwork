@@ -56,6 +56,9 @@
       margin-top: 10px;
       box-shadow: none;
     }
+    .dropdown-menu>li>a:hover{
+      background-image: none;
+    }
     </style>
   </head>
   <body>

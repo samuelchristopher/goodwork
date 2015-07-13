@@ -30,6 +30,7 @@
 
               <li>
                 {% if auth %}
+                  <a href="{{ urlFor('password.change') }}">Change password</a>
                   {% if auth.isAdmin %}
                     <a href="{{ urlFor('admin') }}">Admin</a>
                   {% else %}
