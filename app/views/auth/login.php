@@ -20,6 +20,8 @@
           <label><input type="checkbox" name="remember" id="remember"> Remember me</label>
         </div>
         <button type="submit" class="btn btn-default">Login</button>
+
+        <a href="{{ urlFor('password.recover') }}">Forgot your password?</a>
         <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
       </form>
     </div>
