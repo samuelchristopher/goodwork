@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">GoodWork</a>
+        <a class="navbar-brand" href="{{ urlFor('home') }}">GoodWork</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,6 +31,7 @@
               <li>
                 {% if auth %}
                   <a href="{{ urlFor('password.change') }}">Change password</a>
+                  <a href="{{ urlFor('account.profile') }}">Update profile</a>
                   {% if auth.isAdmin %}
                     <a href="{{ urlFor('admin') }}">Admin</a>
                   {% else %}

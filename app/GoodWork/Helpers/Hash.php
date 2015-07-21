@@ -31,24 +31,20 @@ class Hash
 
   public function hashCheck($know, $user)
   {
-    if (!function_exists('hash_equals')) {
-      function hash_equals( $a, $b ) {
-        $a_length = strlen( $a );
-        if ( $a_length !== strlen( $b ) ) {
-          return false;
-        }
-        $result = 0;
-
-        // Do not attempt to "optimize" this.
-        for ( $i = 0; $i < $a_length; $i++ ) {
-          $result |= ord( $a[ $i ] ) ^ ord( $b[ $i ] );
-        }
-
-        return $result === 0;
+    function hash_equals( $a, $b ) {
+      $a_length = strlen( $a );
+      if ( $a_length !== strlen( $b ) ) {
+        return false;
       }
-      return hash_equals($know, $user);
-    } else {
-      return hash_equals($know, $user);
+      $result = 0;
+
+      // Do not attempt to "optimize" this.
+      for ( $i = 0; $i < $a_length; $i++ ) {
+        $result |= ord( $a[ $i ] ) ^ ord( $b[ $i ] );
+      }
+
+      return $result === 0;
     }
+    return hash_equals($know, $user);
   }
 }
