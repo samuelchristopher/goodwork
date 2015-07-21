@@ -67,7 +67,7 @@
     {%  include 'templates/partials/navigation.php' %}
 
     {% block content%} {% endblock %}
-
+    <div style="height: 60px;"></div>
     {% include 'templates/partials/footer.php' %}
     <!-- Scripts -->
     <!-- jQuery -->

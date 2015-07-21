@@ -17,3 +17,5 @@ require INC_ROOT . '/app/routes/account/profile.php';
 
 require INC_ROOT . '/app/routes/admin/admin.php';
 require INC_ROOT . '/app/routes/errors/404.php';
+
+require INC_ROOT . '/app/routes/statements/terms.php';

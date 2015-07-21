@@ -51,8 +51,5 @@
             Panel content
           </div>
         </div>
-        <div style="height: 60px;">
-
-        </div>
   </div>
 {% endblock %}
