@@ -1,6 +1,6 @@
 {% extends 'templates/default.php' %}
 
-{% block title %}Terms of service{% endblock %}
+{% block title %}Terms and Conditions{% endblock %}
 
 {% block content %}
   <div class="container">
