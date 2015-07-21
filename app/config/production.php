@@ -2,7 +2,7 @@
 
 return [
   'app'=> [
-      'url' => 'http://dev-goodwork.hol.es',
+      'url' => 'http://goodwork.pe.hu',
       'hash' => [
           'algo' => PASSWORD_BCRYPT,
           'cost' => 10
@@ -11,8 +11,8 @@ return [
   'db' => [
       'driver' => 'mysql',
       'host' => 'mysql.hostinger.my',
-      'name' => 'u544037136_site',
-      'username' => 'u544037136_root',
+      'name' => 'u306486889_site',
+      'username' => 'u306486889_root',
       'password' => 'password1234',
       'charset' => 'utf8',
       'collation' => 'utf8_unicode_ci',

@@ -68,6 +68,7 @@
 
     {% block content%} {% endblock %}
 
+    {% include 'templates/partials/footer.php' %}
     <!-- Scripts -->
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
