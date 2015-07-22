@@ -8,6 +8,7 @@ use Noodlehaus\Config;
 use RandomLib\Factory as RandomLib;
 
 use GoodWork\User\User;
+use GoodWork\Category\Edu;
 use GoodWork\Mail\Mailer;
 use GoodWork\Helpers\Hash;
 use GoodWork\Validation\Validator;
@@ -48,6 +49,10 @@ $app->auth = false;
 
 $app->container->set('user', function() {
   return new User;
+});
+
+$app->container->set('edu', function() {
+  return new Edu;
 });
 
 $app->container->singleton('hash', function() use ($app) {

@@ -20,3 +20,5 @@ require INC_ROOT . '/app/routes/errors/404.php';
 
 require INC_ROOT . '/app/routes/statements/terms.php';
 require INC_ROOT . '/app/routes/statements/privacy.php';
+
+require INC_ROOT . '/app/routes/category/student.php';
