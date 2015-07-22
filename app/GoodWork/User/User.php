@@ -21,6 +21,7 @@ class User  extends Eloquent
     'future_ambition',
     'category',
     'qualifications',
+    'country',
   ];
 
   public function getFullName()

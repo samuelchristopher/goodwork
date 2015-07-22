@@ -11,6 +11,10 @@ $app->post('/register', $guest(), function() use ($app) {
 
   // Getting information
   $email = $request->post('email');
+  $category = $request->post('category');
+  $futureAmbition = $request->post('future_ambition');
+  $country = $request->post('country');
+  // $qualifications = $request->post('qualifications');
   $username = $request->post('username');
   $password = $request->post('password');
   $passwordConfirm = $request->post('password_confirm');
@@ -21,7 +25,10 @@ $app->post('/register', $guest(), function() use ($app) {
     'Email' => [$email, 'required|email|uniqueEmail'],
     'Username' => [$username, 'required|alnumDash|max(20)|uniqueUsername'],
     'Password' => [$password, 'required|min(6)'],
-    'Confirm password' => [$passwordConfirm, 'required|matches(Password)']
+    'Confirm password' => [$passwordConfirm, 'required|matches(Password)'],
+    'Category' => [$category, 'required'],
+    'Future ambition' => [$futureAmbition, 'required'],
+    'Country' => [$country, 'required'],
   ]);
 
   if ($v->passes()) {
@@ -33,7 +40,10 @@ $app->post('/register', $guest(), function() use ($app) {
         'username' => $username,
         'password' => $app->hash->password($password),
         'active' => false,
-        'active_hash' => $app->hash->hash($identifier)
+        'active_hash' => $app->hash->hash($identifier),
+        'category' => $category,
+        'future_ambition' => $futureAmbition,
+        'country' => $country,
     ]);
 
     $user->permissions()->create(UserPermission::$defaults);
@@ -41,11 +51,11 @@ $app->post('/register', $guest(), function() use ($app) {
     // Sending Email for authentication
     $app->mail->send('email/auth/registered.php', [ 'user' => $user, 'identifier' => $identifier], function($message) use ($user){
       $message->to($user->email);
-      $message->subject('Thanks for registering.');
+      $message->subject('Thanks for registering');
     });
 
     // Flashing a message
-    $app->flash('global', 'You have been registered.');
+    $app->flash('global', 'You have been registered. Check your email for activation instructions.');
     $app->response->redirect($app->urlFor('home'));
   }
 
@@ -53,5 +63,4 @@ $app->post('/register', $guest(), function() use ($app) {
       'errors' => $v->errors(),
       'request' => $request,
   ]);
-
 })->name('register.post');

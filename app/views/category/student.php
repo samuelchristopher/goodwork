@@ -22,23 +22,24 @@
       <div class="page-header">
         <h1>Top Schools <small>{{ auth.country }}</small></h1>
       </div>
-    </div>
 
 
-    {% for edu in edus %}
-      <div class="col-md-4" style="padding: 0;">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            {% if edu.getName %} <h2>{{edu.getName}}</h2> {% endif %}<br>
-            <p>
-              <strong>Principal</strong> ~ {{edu.principal_name}}
-            </p>
-          </div>
-          <div class="panel-footer">
-             <button type="button" class="btn btn-primary"><a style="color: white;" href="{{ urlFor('user.profile', {username: user.username})}}">Profile</a></button>
+
+      {% for edu in edus %}
+        <div class="col-md-4" style="padding: 0;">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              {% if edu.getName %} <h2>{{edu.getName}}</h2> {% endif %}<br>
+              <p>
+                <strong>Principal</strong> ~ {{edu.principal_name}}
+              </p>
+            </div>
+            <div class="panel-footer">
+               <button type="button" class="btn btn-primary"><a style="color: white;" href="{{ urlFor('user.profile', {username: user.username})}}">Profile</a></button>
+            </div>
           </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}
