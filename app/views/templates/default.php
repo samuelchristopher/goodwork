@@ -6,10 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodWork | {% block title %}{% endblock %}</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="\bower_components\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <style media="screen">
     .navbar-default {
       background-color: #f8f8f8;
@@ -71,9 +69,10 @@
     {% include 'templates/partials/footer.php' %}
     <!-- Scripts -->
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/npm.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         setTimeout(function() {

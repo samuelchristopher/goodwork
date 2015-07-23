@@ -1,0 +1,15 @@
+{
+  "name": "goodwork-final",
+  "version": "0.0.2",
+  "homepage": "https://github.com/samuelchristopher/goodwork",
+  "authors": [
+    "Samuel Christopher <thesamchris@gmail.com>"
+  ],
+  "keywords": [
+    "goodwork"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}
