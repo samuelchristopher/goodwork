@@ -49,8 +49,18 @@ $app->post('/login', $guest(), function() use ($app) {
         );
       }
 
+     if ($user->category === 'Student') {
+        $url = $app->urlFor('category.student');
+      } elseif ($user->category === 'Graduate') {
+        $url = $app->urlFor('category.graduate');
+      } elseif ($user->category === 'Training') {
+        $url = $app->urlFor('category.training');
+      } elseif ($user->category === 'Employer') {
+        $url = $app->urlFor('category.employer');
+      };
+
       $app->flash('global', 'You are now signed in!');
-      $app->response->redirect($app->urlFor('home'));
+      $app->response->redirect($url);
 
     } else {
       $app->flash('global', 'Could not log you in!');

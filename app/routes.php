@@ -22,3 +22,6 @@ require INC_ROOT . '/app/routes/statements/terms.php';
 require INC_ROOT . '/app/routes/statements/privacy.php';
 
 require INC_ROOT . '/app/routes/category/student.php';
+require INC_ROOT . '/app/routes/category/training.php';
+require INC_ROOT . '/app/routes/category/graduate.php';
+require INC_ROOT . '/app/routes/category/employer.php';
