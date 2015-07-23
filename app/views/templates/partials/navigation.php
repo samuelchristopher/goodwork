@@ -15,7 +15,23 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="{{ urlFor('home') }}">Home<span class="sr-only">(current)</span></a></li>
+          <li class="active">
+            <a
+              {% if auth.isStudent %}
+                href="{{ urlFor('category.student') }}"
+              {% elseif auth.isGraduate %}
+                href="{{ urlFor('category.graduate') }}"
+              {% elseif auth.isEmployer %}
+                href="{{ urlFor('category.employer') }}"
+              {% elseif auth.isTraining %}
+                href="{{ urlFor('category.training') }}"
+              {% else %}
+                href = "{{ urlFor('home') }}"
+              {% endif %}
+              >Home<span class="sr-only">
+              (current)</span>
+            </a>
+          </li>
           {% if auth %}
 
           {% else %}

@@ -25,3 +25,4 @@ require INC_ROOT . '/app/routes/category/student.php';
 require INC_ROOT . '/app/routes/category/training.php';
 require INC_ROOT . '/app/routes/category/graduate.php';
 require INC_ROOT . '/app/routes/category/employer.php';
+require INC_ROOT . '/app/routes/category/school_profile.php';

@@ -79,4 +79,40 @@ class User  extends Eloquent
   {
     return $this->hasOne('GoodWork\User\UserPermission', 'user_id');
   }
+
+  public function isStudent()
+  {
+    if ($this->category === 'Student') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function isGraduate()
+  {
+    if ($this->category === 'Graduate') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function isEmployer()
+  {
+    if ($this->category === 'Employer') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public function isTraining()
+  {
+    if ($this->category === 'Training') {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
