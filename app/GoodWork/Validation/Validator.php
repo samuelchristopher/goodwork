@@ -5,21 +5,25 @@ namespace GoodWork\Validation;
 use Violin\Violin;
 use GoodWork\User\User;
 use GoodWork\Helpers\Hash;
+use GoodWork\Category\Edu;
 
 class Validator extends Violin
 {
   protected $user;
+  protected $edu;
   protected $hash;
   protected $auth;
-  public function __construct(User $user, Hash $hash, $auth = null)
+  public function __construct(User $user, Hash $hash, Edu $edu, $auth = null)
   {
     $this->user =$user;
+    $this->edu = $edu;
     $this->hash =$hash;
     $this->auth =$auth;
 
     $this->addFieldMessages([
       'Email' => [
-          'uniqueEmail' => 'That email is already in use.'
+          'uniqueEmail' => 'That email is already in use.',
+          'uniqueEduEmail' => 'That email is already in use.'
       ],
       'Username' => [
           'uniqueUsername' => 'That username is already in use.'
@@ -41,6 +45,18 @@ class Validator extends Violin
 
     return ! (bool) $user->count();
   }
+
+  public function validate_uniqueEduEmail($value, $input, $args)
+  {
+    $edu = $this->edu->where('Email', $value);
+
+    if ($this->edu && $this->edu->email === $value) {
+      return true;
+    }
+
+    return ! (bool) $edu->count();
+  }
+
   public function validate_uniqueUsername($value, $input, $args)
   {
     return ! (bool) $this->user->where('Username', $value)->count();
