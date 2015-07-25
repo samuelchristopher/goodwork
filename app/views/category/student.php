@@ -3,6 +3,17 @@
 {% block title %}Student{% endblock %}
 
 {% block content %}
+  <style>
+    .section {
+      display: none;
+      opacity: 0;
+    }
+
+    .section.current {
+      display: block;
+      opacity: 1;
+    }
+  </style>
   <div class="container">
     <div class="jumbotron">
       <div style="padding-left: 20px;">
@@ -13,12 +24,12 @@
     </div>
 
     <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="#">Schools</a></li>
-      <li role="presentation"><a href="#">Consultance</a></li>
+      <li role="presentation" class="active"><a href="#schools">Schools</a></li>
+      <li role="presentation"><a href="#consultance">Consultance</a></li>
       <li role="presentation"><a href="#">Your Qualifications</a></li>
     </ul>
 
-    <div class="" id="schools">
+    <div class="section current">
       <div class="page-header">
         <h1>Top Schools <small>{{ auth.country }}</small></h1>
       </div>
@@ -44,6 +55,24 @@
           </div>
         {% endfor %}
       {% endif %}
+    </div>
+
+    <div class="section">
+      <form action="{{ urlFor('category.student.post') }}" method="post">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" name="email" placeholder="Your email">
+          {% if errors.has('Email') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Email') }}</div> {% endif %}
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+          {% if errors.has('Subject') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Subject') }}</div> {% endif %}
+        </div>
+        <button type="submit" class="btn btn-default">Book consultant</button>
+        <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
+      </form>
+
     </div>
   </div>
 {% endblock %}
