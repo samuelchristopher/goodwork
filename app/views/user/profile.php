@@ -43,6 +43,32 @@
           </div>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">District</h3>
+          </div>
+          <div class="panel-body">
+            {{ user.district }}
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <button type="button" name="button" id="userQualifications" class="btn btn-primary">{{ user.getFullNameOrUsername }}'s qualifications'</button>
+        <div class="" >
+          <div class="col-md-4">
+            <div class="panel panel-default" id="showQualifications" style="display:none;">
+              <div class="panel-heading">
+                <h3 class="panel-title">Qualifications</h3>
+              </div>
+              <div class="panel-body">
+                {{ user.qualifications }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 

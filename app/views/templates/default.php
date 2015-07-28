@@ -80,6 +80,10 @@
             $(this).remove();
           });
         }, 4500);
+
+        $('#userQualifications').on('click', function() {
+          $('#showQualifications').toggle(500);
+        });
       });
     </script>
   </body>
