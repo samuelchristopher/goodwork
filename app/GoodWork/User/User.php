@@ -22,6 +22,7 @@ class User  extends Eloquent
     'category',
     'qualifications',
     'country',
+    'district',
   ];
 
   public function getFullName()

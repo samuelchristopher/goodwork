@@ -14,7 +14,8 @@ $app->post('/register', $guest(), function() use ($app) {
   $category = $request->post('category');
   $futureAmbition = $request->post('future_ambition');
   $country = $request->post('country');
-  // $qualifications = $request->post('qualifications');
+  $district = $request->post('district');
+  $qualifications = $request->post('qualifications');
   $username = $request->post('username');
   $password = $request->post('password');
   $passwordConfirm = $request->post('password_confirm');
@@ -29,6 +30,8 @@ $app->post('/register', $guest(), function() use ($app) {
     'Category' => [$category, 'required'],
     'Future ambition' => [$futureAmbition, 'required'],
     'Country' => [$country, 'required'],
+    'District' => [$district, 'required'],
+    'Qualifications' => [$qualifications, 'required'],
   ]);
 
   if ($v->passes()) {
@@ -44,6 +47,8 @@ $app->post('/register', $guest(), function() use ($app) {
         'category' => $category,
         'future_ambition' => $futureAmbition,
         'country' => $country,
+        'district' => $district,
+        'qualifications' => $qualifications,
     ]);
 
     $user->permissions()->create(UserPermission::$defaults);

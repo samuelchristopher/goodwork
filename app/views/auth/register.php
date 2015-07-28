@@ -144,11 +144,28 @@
           {% if errors.has('Country') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Country') }}</div> {% endif %}
         </div>
 
-        <!-- <div class="form-group">
+        <div class="form-group">
           <label for="qualifications">Qualifications</label>
-          <input class="form-control" style="margin-bottom: 20px;" rows="3" id="qualifications" placeholder="Separate with comma" {% if request.post('qualifications') %} value="{{ request.post('qualifications') }}" {% endif %}/>
+          <input class="form-control" style="margin-bottom: 20px;" name="qualifications" rows="3" id="qualifications" placeholder="Separate with comma" {% if request.post('qualifications') %} value="{{ request.post('qualifications') }}" {% endif %}/>
           {% if errors.has('Qualifications') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Qualifications') }}</div> {% endif %}
-        </div> -->
+        </div>
+
+        <div class="form-group">
+          <label for="district">District</label>
+          <select name="district" class="form-control future_ambition_select" id="district">
+            <option value="Brunei Muara">Brunei Muara</option>
+            <option value="Kuala Belait">Kuala Belait</option>
+            <option value="Temburong">Temburong</option>
+            <option value="Tutong">Tutong</option>
+          </select>
+          {% if errors.has('District') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('District') }}</div> {% endif %}
+        </div>
+
+        <div class="text-muted">
+          <p>
+            *Please update your details in the update page.
+          </p>
+        </div>
 
         <button type="submit" class="btn btn-default">Submit</button>
         <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
