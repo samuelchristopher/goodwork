@@ -12,6 +12,6 @@
     }
   </style>
   <div class="container">
-    <p class="text-muted">&copy GoodWork 2015. All rights reserved. <a href="{{ urlFor('statements.terms') }}">Terms and Conditions</a> <a href="{{ urlFor('statements.privacy') }}">Privacy Policy</a></p>
+    <p class="text-muted">&copy GoodWork 2015. All rights reserved. <a href="{{ urlFor('statements.terms') }}" style="float: right;">Terms and Conditions</a> <a href="{{ urlFor('statements.privacy') }}" style="float: right;margin-right: 20px;">Privacy Policy</a></p>
   </div>
 </footer>
