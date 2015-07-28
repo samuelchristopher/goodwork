@@ -80,23 +80,6 @@
             $(this).remove();
           });
         }, 4500);
-
-        request = window.location.hash;
-
-        if (request === 'consultance') {
-          $('.page.current').removeClass('current');
-          $('.page').eq(1).addClass('current');
-        }
-
-        $('ul.nav li a').click(function () {
-          var speed = 200;
-          var i = $(this).index();
-
-          $('.page.current').animate({opacity: 0}, speed, function () {
-            $(this).removeClass('current');
-            $('.page').eq(i).animate({opacity: 1}).addClass('current');
-          });
-        });
       });
     </script>
   </body>
