@@ -23,3 +23,35 @@ $admin = function() use ($app) {
     }
   };
 };
+
+$student = function() use ($app) {
+  return function() use ($app) {
+    if (!$app->auth || !$app->auth->isStudent()) {
+      return $app->redirect($app->urlFor('home'));
+    }
+  };
+};
+
+$graduate = function() use ($app) {
+  return function() use ($app) {
+    if (!$app->auth || !$app->auth->isGraduate()) {
+      return $app->redirect($app->urlFor('home'));
+    }
+  };
+};
+
+$employer = function() use ($app) {
+  return function() use ($app) {
+    if (!$app->auth || !$app->auth->isEmployer()) {
+      return $app->redirect($app->urlFor('home'));
+    }
+  };
+};
+
+$training = function() use ($app) {
+  return function() use ($app) {
+    if (!$app->auth || !$app->auth->isTraining()) {
+      return $app->redirect($app->urlFor('home'));
+    }
+  };
+};
