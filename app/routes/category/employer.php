@@ -1,5 +1,5 @@
 <?php
 
 $app->get('/category/employer', function() use ($app) {
-  echo 'Employer';
+  $app->render('category/employer.php');
 })->name('category.employer');

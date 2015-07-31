@@ -27,6 +27,14 @@ $app->post('/category/student', $authenticated(), function() use ($app) {
       $message->to('thegoodworkteam@gmail.com');
       $message->subject('Consultant booking');
     });
+
+    $app->flash('global', 'Your message has been sent and will be addressed within 7 days');
+    return $app->response->redirect($app->urlFor('category.student'));
   }
+
+  $app->flash('global', 'Email and message fields need to be filled appropriately');
+  return $app->response->redirect($app->urlFor('category.student'));
+
+
 
 })->name('category.student.post');
