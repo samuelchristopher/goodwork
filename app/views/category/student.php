@@ -4,6 +4,9 @@
 
 {% block content %}
   <style>
+    #qualifications {
+      display: none;
+    }
     .section {
       display: none;
       opacity: 0;

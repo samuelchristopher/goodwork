@@ -21,9 +21,7 @@
     .panel-default>.panel-heading  {
       background-image: none;
     }
-    #qualifications {
-      display: none;
-    }
+    
     #consultance {
       display: none;
     }

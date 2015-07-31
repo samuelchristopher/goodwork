@@ -28,7 +28,7 @@
 
         <div class="form-group">
           <label for="category">Category</label>
-          <select class="form-control" name="category" id="category" selected="request.post('category') ? request.post('category') : auth.category">
+          <select class="form-control" name="category" id="category" selected="{{request.post('category') ? request.post('category') : auth.category}}">
             <option value="Student">Student</option>
             <option value="Graduate">Graduate</option>
             <option value="Training">Training</option>
@@ -120,7 +120,7 @@
 
         <div class="form-group">
           <label for="country">Country</label>
-          <select name="country" class="form-control future_ambition_select" id="country" selected="request.post('country') ? request.post('country') : auth.country">
+          <select name="country" class="form-control future_ambition_select" id="country" selected="{{request.post('country') ? request.post('country') : auth.country}}">
             <option value="Brunei">Brunei</option>
             <option value="Cambodia">Cambodia</option>
             <option value="East Timor">East Timor</option>
@@ -138,7 +138,7 @@
 
         <div class="form-group">
           <label for="qualifications">Qualifications</label>
-          <input class="form-control" style="margin-bottom: 20px;" name="qualifications" rows="3" id="qualifications" placeholder="Separate with comma" value="request.post('qualifications') ? request.post('qualifications') : auth.qualifications"/>
+          <input class="form-control" style="margin-bottom: 20px;" name="qualifications" rows="3" id="qualifications" placeholder="Separate with comma" value="{{request.post('qualifications') ? request.post('qualifications') : auth.qualifications}}"/>
           {% if errors.has('Qualifications') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Qualifications') }}</div> {% endif %}
         </div>
 
