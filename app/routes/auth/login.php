@@ -60,11 +60,11 @@ $app->post('/login', $guest(), function() use ($app) {
       };
 
       $app->flash('global', 'You are now signed in!');
-      $app->response->redirect($url);
+      return $app->response->redirect($url);
 
     } else {
       $app->flash('global', 'Could not log you in!');
-      $app->response->redirect($app->urlFor('login'));
+      return $app->response->redirect($app->urlFor('login'));
     }
 
 

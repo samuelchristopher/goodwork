@@ -61,7 +61,7 @@ $app->post('/register', $guest(), function() use ($app) {
 
     // Flashing a message
     $app->flash('global', 'You have been registered. Check your email for activation instructions.');
-    $app->response->redirect($app->urlFor('home'));
+    return $app->response->redirect($app->urlFor('home'));
   }
 
   $app->render('auth/register.php', [

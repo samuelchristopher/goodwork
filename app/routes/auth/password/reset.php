@@ -12,15 +12,15 @@ $app->get('/password-reset', $guest(), function() use ($app) {
 
   if (!$user) {
     $app->flash('global', 'Could not find that user');
-    $app->response->redirect($app->urlFor('home'));
+    return $app->response->redirect($app->urlFor('home'));
   }
 
   if (!$user->recover_hash) {
-    $app->response->redirect($app->urlFor('home'));
+    return $app->response->redirect($app->urlFor('home'));
   }
 
   if (!$app->hash->hashCheck($user->recover_hash, $hashedIdentifier)) {
-    $app->response->redirect($app->urlFor('home'));
+    return $app->response->redirect($app->urlFor('home'));
   }
 
   $app->render('auth/password/reset.php', [
@@ -45,15 +45,15 @@ $app->post('/password-reset', $guest(), function() use ($app) {
 
   if (!$user) {
     $app->flash('global', 'Could not find that user');
-    $app->response->redirect($app->urlFor('home'));
+    return $app->response->redirect($app->urlFor('home'));
   }
 
   if (!$user->recover_hash) {
-    $app->response->redirect($app->urlFor('home'));
+    return $app->response->redirect($app->urlFor('home'));
   }
 
   if (!$app->hash->hashCheck($user->recover_hash, $hashedIdentifier)) {
-    $app->response->redirect($app->urlFor('home'));
+    return $app->response->redirect($app->urlFor('home'));
   }
 
   $v = $app->validation;
@@ -70,7 +70,7 @@ $app->post('/password-reset', $guest(), function() use ($app) {
     ]);
 
     $app->flash('global', 'Your password has been reset and you can now sign in');
-    $app->response->redirect($app->urlFor('home'));
+    return $app->response->redirect($app->urlFor('home'));
   }
 
   $app->render('auth/password/reset.php', [

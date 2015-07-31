@@ -56,7 +56,7 @@ $app->post('/admin', $admin(), function() use ($app) {
     } else {
       $url = $app->urlFor('home');
     }
-    $app->response->redirect($url);
+    return $app->response->redirect($url);
 
   }
 
