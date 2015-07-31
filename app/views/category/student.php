@@ -23,13 +23,13 @@
       </div>
     </div>
 
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="#schools">Schools</a></li>
-      <li role="presentation"><a href="#consultance">Consultance</a></li>
-      <li role="presentation"><a href="#">Your Qualifications</a></li>
+    <ul class="nav nav-tabs" id="tabs">
+      <li role="presentation" class="active"><a href="#schools" class="tab-link">Schools</a></li>
+      <li role="presentation"><a href="#consultance" class="tab-link">Consultance</a></li>
+      <li role="presentation"><a href="#qualifications" class="tab-link">Your Qualifications</a></li>
     </ul>
 
-    <div class="section current">
+    <div id="schools">
       <div class="page-header">
         <h1>Top Schools <small>{{ auth.country }}</small></h1>
       </div>
@@ -40,7 +40,7 @@
         </p>
       {% else %}
         {% for edu in edus %}
-          <div class="col-md-4" style="padding: 0;">
+          <div class="col-md-4">
             <div class="panel panel-default">
               <div class="panel-body">
                 {% if edu.getName %} <h2>{{edu.getName}}</h2> {% endif %}<br>
@@ -55,9 +55,13 @@
           </div>
         {% endfor %}
       {% endif %}
+      <div style="height: 200px;"></div>
     </div>
 
-    <div class="section">
+    <div id="consultance">
+      <div class="page-header">
+        <h1>Enter your email and a message to start the consultance process <small>You may be assigned a consultor based on your message</small></h1>
+      </div>
       <form action="{{ urlFor('category.student.post') }}" method="post">
         <div class="form-group">
           <label for="email">Email</label>
@@ -65,14 +69,30 @@
           {% if errors.has('Email') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Email') }}</div> {% endif %}
         </div>
         <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
-          {% if errors.has('Subject') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Subject') }}</div> {% endif %}
+          <label for="message">Message</label>
+          <input type="text" class="form-control" id="message" name="message" placeholder="Message">
+          {% if errors.has('Message') %} <div class="alert alert-danger" role="alert"><strong>Oops! </strong>{{ errors.first('Message') }}</div> {% endif %}
         </div>
         <button type="submit" class="btn btn-default">Book consultant</button>
         <input type="hidden" name="{{ csrf_key }}" value="{{ csrf_token }}">
       </form>
 
     </div>
-  </div>
+
+    <div class="row" id="qualifications">
+      <div class="page-header">
+        <h1>This your qualifications page <small>Your qualifications can be updated in your <a href="{{ urlFor('account.profile') }}">update profile</a> page</small></h1>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">My qualifications</h3>
+          </div>
+          <div class="panel-body">
+            {{ auth.qualifications }}
+          </div>
+        </div>
+      </div>
+    </div>
+
 {% endblock %}

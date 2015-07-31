@@ -13,13 +13,13 @@ $app->post('/category/student', $authenticated(), function() use ($app) {
   $request = $app->request;
 
   $email = $request->post('email');
-  $subject = $request->post('subject');
+  $subject = $request->post('message');
 
   $v = $app->validation;
 
   $v->validate([
     'Email' => [$email, 'required|email'],
-    'Subject' => [$subject, 'required']
+    'Message' => [$subject, 'required']
   ]);
 
   if ($v->passes()) {

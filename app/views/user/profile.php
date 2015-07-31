@@ -46,16 +46,16 @@
       <div class="col-md-4">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">District</h3>
+            <h3 class="panel-title">Location</h3>
           </div>
           <div class="panel-body">
-            {{ user.district }}
+            {{ user.district }}, {{ user.country }}
           </div>
         </div>
       </div>
 
       <div class="">
-        <button type="button" name="button" id="userQualifications" class="btn btn-primary">{{ user.getFullNameOrUsername }}'s qualifications'</button>
+        <button type="button" name="button" id="userQualifications" class="btn btn-primary">{{ user.getFullNameOrUsername }}'s qualifications</button>
         <div class="" >
           <div class="col-md-4">
             <div class="panel panel-default" id="showQualifications" style="display:none;">

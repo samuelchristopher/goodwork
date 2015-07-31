@@ -6,9 +6,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodWork | {% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <style media="screen">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <style>
+    #userQualifications {
+      position: absolute;
+      left: 105px;
+      bottom: 100px
+    }
+    body > div > footer {
+      position: fixed;
+      left: 0;
+    }
+    .panel-default>.panel-heading  {
+      background-image: none;
+    }
+    #qualifications {
+      display: none;
+    }
+    #consultance {
+      display: none;
+    }
     .navbar-default {
       background-color: #f8f8f8;
       border-color: #e7e7e7;
@@ -65,14 +83,13 @@
     {%  include 'templates/partials/navigation.php' %}
 
     {% block content%} {% endblock %}
-    <div style="height: 60px;"></div>
+    <div style="height: 200px;"></div>
     {% include 'templates/partials/footer.php' %}
     <!-- Scripts -->
     <!-- jQuery -->
-    <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/npm.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         setTimeout(function() {
@@ -83,6 +100,27 @@
 
         $('#userQualifications').on('click', function() {
           $('#showQualifications').toggle(500);
+        });
+
+        $('li .tab-link').on('click', function() {
+          var target = $(this).attr('href');
+          var active = $('#tabs li.active a');
+          var liActive = $('#tabs li.active');
+          var linkShowing = $(active).closest('.tab-link');
+          var showing = $(linkShowing).attr('href');
+          var time = 300;
+
+          if (target === showing) {
+
+          } else {
+            $(liActive).removeClass('active');
+            var li = $(this).closest('li');
+            li.addClass('active');
+
+            $(showing).toggle();
+            $(target).toggle();
+          }
+
         });
       });
     </script>
