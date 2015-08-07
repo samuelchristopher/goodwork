@@ -9,6 +9,20 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <style>
+    #home-animation-modal-toggle {
+      position: absolute;
+      z-index: 2;
+      background: none;
+      width: 768px;
+      height: 432px;
+      border: none;
+      display: flex;
+    }
+    .jumbotron.home {
+      background: none;
+      display: flex;
+      justify-content: center;
+    }
     #userQualifications {
       position: absolute;
       left: 105px;
@@ -21,7 +35,7 @@
     .panel-default>.panel-heading  {
       background-image: none;
     }
-    
+
     #consultance {
       display: none;
     }

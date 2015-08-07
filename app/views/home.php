@@ -6,19 +6,16 @@
   <div class="container">
 
 
-    <div class="jumbotron">
+    <div class="jumbotron home">
       <div style="padding-left: 20px;">
-        <h1>GoodWork Home!</h1>
-        <p>Helping the nation, one person at a time. Your next!</p>
 
         {% if auth.email %}
           <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
         {% else %}
           <p>
 
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-              Login
-            </button>
+            <button type="button" class="btn btn-primary btn-lg" id="home-animation-modal-toggle" data-toggle="modal" data-target="#myModal"></button>
+            <object width="768" height="432"><param name="movie" value="http://www.filz.us/files/1f4e650a/3fe/IntroGW.swf"><embed src="http://www.filz.us/files/1f4e650a/3fe/IntroGW.swf" width="768" height="432"></embed></object>
 
             <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
