@@ -39,7 +39,7 @@
             </p>&#13;
 						<!-- Callout Panel -->&#13;
 						<p class="callout" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 1.6; background-color: #ECF8FF; margin: 0 0 15px; padding: 15px;">&#13;
-							We are very much looking forward to helping you acheive your ambitions! <a href="#" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #2BA6CB; font-weight: bold; margin: 0; padding: 0;">Click it! »</a>&#13;
+							We are very much looking forward to helping you acheive your ambitions! <a href="{{ baseUrl }}" style="font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; color: #2BA6CB; font-weight: bold; margin: 0; padding: 0;">Click it! »</a>&#13;
 						</p><!-- /Callout Panel -->&#13;
 					</td>&#13;
 				</tr></table></div><!-- /content -->&#13;
