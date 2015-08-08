@@ -5,7 +5,7 @@
     <!-- This is the sole work of Samuel Paul Christopher, Zaimi Ramlee, Neil Joshua and Ronan Chua. All rights reserved. NOTE: PLAGARISM OF THIS PROJECT IS PUNISHABLE BY LAW. -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoodWork | {% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %} | GoodWork</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <style>
