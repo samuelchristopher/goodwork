@@ -15,7 +15,7 @@
           <p>
 
             <button type="button" class="btn btn-primary btn-lg" id="home-animation-modal-toggle" data-toggle="modal" data-target="#myModal"></button>
-            <object width="768" height="432"><param name="movie" value="http://www.filz.us/files/0faa76b8/134/IntroGW.swf"><embed src="http://www.filz.us/files/1f4e650a/3fe/IntroGW.swf" width="768" height="432"></embed></object>
+            <object width="768" height="432"><param name="movie" value="http://orig08.deviantart.net/ef83/f/2015/222/5/9/introgw_by_b3azt-d956d13.swf"><embed src="http://www.filz.us/files/1f4e650a/3fe/IntroGW.swf" width="768" height="432"></embed></object>
 
             <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
